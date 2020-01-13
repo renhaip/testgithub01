@@ -1,0 +1,26 @@
+string isReceive = "";
+            if (radioButton1.Checked==true)
+            {
+                isReceive = "已到货";
+            }
+            else {
+                isReceive = "未到货";
+            }
+
+
+
+
+
+StringBuilder sql =new StringBuilder ( @"SELECT TOP 1000 [id]
+              ,[name]
+              ,[anothername]
+              ,[property]
+              ,[price]
+              ,[production]
+          FROM [FlowerManagerSys].[dbo].[Flower]
+            where    1=1  ");
+
+                if (!"".Equals(name))
+                {
+                    sql.AppendFormat(" and  name like '%"+name+"%'  ");
+                }
